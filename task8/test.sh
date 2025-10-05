@@ -9,8 +9,8 @@ echo "log1" > logs/file1.log
 echo "log2" > logs/file2.log
 
 # Меняем дату модификации на 8 дней назад
-touch -t $(date -v -8d "+%Y%m%d%H%M.%S") logs/file1.log # я загуглил и оказалось что на маке работает только вот так
-touch -t $(date -v -8d "+%Y%m%d%H%M.%S") logs/file2.log
+touch -d "8 days ago" logs/file1.log
+touch -d "8 days ago" logs/file2.log
 
 # Создаем новый файл
 echo "log3" > logs/file3.log
