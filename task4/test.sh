@@ -11,8 +11,8 @@ echo "test2" > test_dir/subdir/file2.txt
 ../solution.sh test_dir
 
 # Проверяем права
-file_perms=$(stat -c "%a" test_dir/file1.txt)
-dir_perms=$(stat -c "%a" test_dir/subdir)
+file_perms=$(stat -f "%A" test_dir/file1.txt) # в интернете сказали что на маке работает только так
+dir_perms=$(stat -f "%A" test_dir/subdir)
 
 if [ "$file_perms" = "640" ] && [ "$dir_perms" = "750" ]; then
     echo "PASS: Permissions set correctly"
